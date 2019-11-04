@@ -7,16 +7,18 @@
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/layout.css">
-
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="js/jquery.mobilemenu.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('#responsive-menu').mobileMenu();
+			$("input").checkboxradio();
 		});
 	</script>
 </head>
@@ -62,12 +64,17 @@
 			    
 			    <br>
 			    What is your current infrastructure?<br>
-			    <label for="Mac"><input type="radio" name="infrastructure" value="Mac" id="Mac">Mac</label>
-			    <label for="Linux"><input type="radio" name="infrastructure" value="Linux" id="Linux">Linux</label>
-			    <label for="Unix"><input type="radio" name="infrastructure" value="Unix" id="Unix">Unix</label>
-			    <label for="Windows"><input type="radio" name="infrastructure" value="Windows" id="Windows">Windows</label>
-
-			    <br>
+			    <legend>Select a Location: </legend>
+					<label for="radio-1">Mac</label>
+					<input type="radio" name="radio-1" id="radio-1">
+					<label for="radio-2">Linux</label>
+					<input type="radio" name="radio-1" id="radio-2">
+					<label for="radio-3">Unix</label>
+					<input type="radio" name="radio-1" id="radio-3">
+					<label for="radio-4">Windows</label>
+					<input type="radio" name="radio-1" id="radio-4">
+				<br>
+				
 			    How many employees do you have?
 			    <select name="companysize">
                     <option value="1-10">1-10</option>
