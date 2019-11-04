@@ -8,12 +8,12 @@
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/layout.css">
 	<link rel="stylesheet" href="css/iconfont.css">
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js" 
-        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" 
-        crossorigin="anonymous">
-	</script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="js/jquery.goTop.js"></script>
-	<script src="js/jquery.sticky-nav-1.1.0.min.js"></script>
+	<link rel="stylesheet" href="css/jquery.paralaxmenu.css">
+	<script src="js/jquery.paralaxmenu.js"></script>
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -36,7 +36,11 @@
 			fadeOutSpeed: 500
 
 			});
-			$('.fixedNav').stickynav();
+			$('#sub-brochure').paralaxmenu({
+
+			// the container div id/class where sticky menu is going to be placed
+			container: '#testimonials',
+			});
 		});
 	</script>
 	<style rel="stylesheet">
@@ -54,10 +58,9 @@
 			text-align: center;
 			cursor: pointer;
 		}
-		.fixedNav > ul{
-			display: block;
+		#sub-brochure{
+			position: fixed;
 		}
-
 	</style>
 </head>
 <body>
@@ -82,7 +85,7 @@
 		
 		<section id="welcome" class="eleven columns">
 			<h4>Our Solutions</h4>
-			<div id="#vprospect">
+			<div id="vprospect">
 					<p>vProspect 2.0</p>
 
 					<p>Define and research your target audience, define your strategy to reach that audience and present a strong and memorable brand to that audience. vProspect can help your business:
@@ -105,7 +108,7 @@
 
 					
 			</div>
-			<div id="#vconvert">
+			<div id="vconvert">
 					<p>vConvert 2.0</p>
 
 					<p>Create a highly user-friendly and easy-to-navigate information architecture that will help your prospects interact with the company on a highly interactive level. vConvert can help your business:
@@ -123,7 +126,7 @@
 					Create an architecture to display the site content and information in a logical and easy to access manner. Facilitating thereby the desired ease, for the user to find what they are looking for quickly and easily. Allowing the user to focus on the subject at hand rather than searching for information on the site.</p>
 					
 			</div>
-			<div id="#vretain">
+			<div id="vretain">
 					<p>vRetain 1.0</p>
 
 					<p>Build on existing customer relationships to improve productivity and maximize customer loyalty, while growing revenues. vRetain can help your business:
@@ -141,15 +144,17 @@
 		</section>
 		
 		<section id="testimonials" class="five columns">
-			<h4>Quick Nav</h4>
-			<nav class="fixedNav">
-				<ul>
-				  <li><a href="#vprospect">section 1</a></li>
-				  <li><a href="#vconvert">section 2</a></li>
-				  <li><a href="#vretain">section 3</a></li>
-				</ul>
-			</nav>
-
+				<div id="brochure-menu">
+					<div id="sub-brochure">
+						<h4>Quick Nav</h4>
+						<ul>
+							<li><a href="#vprospect">vProspect 2.0</a></li>
+							<li><a href="#vconvert">vConvert 2.0</a></li>
+							<li><a href="#vretain">vRetain 1.0</a></li>
+						</ul>
+					</div>
+				</div>
+				
 			<!-- INSERT ACCORDION HERE -->
 		</section>
 	</main>

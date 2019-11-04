@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -18,7 +19,9 @@
 	<script>
 		$(document).ready(function(){
 			$('#responsive-menu').mobileMenu();
-			$("input").checkboxradio();
+			$( ".checkboxradio input" ).checkboxradio();
+			$( "#empId" ).selectmenu();
+			$( "input[type=submit]" ).button();
 		});
 	</script>
 </head>
@@ -30,11 +33,11 @@
 		
 		<nav class="thirteen columns">
 			<ul id="responsive-menu">
-				<li><a href="index.html" title = "Home Page">Home</a></li>
-				<li><a href="aboutus.html" title="Get to know us more">About Us</a></li>
-				<li><a href="solutions.html" title = "Vecta Corp. offers 3 solutions for prospecting, converting, and retaining customers">Solutions</a></li>
-				<li><a href="support.html" title = "Available 24 X 7">Support</a></li>
-				<li><a href="contactus.html" title = "Connect with us in case of any questions">Contact Us</a></li>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="aboutus.html">About Us</a></li>
+				<li><a href="solutions.html">Solutions</a></li>
+				<li><a href="support.html">Support</a></li>
+				<li><a href="contactus.html">Contact Us</a></li>
 			</ul>
 		</nav>
 		
@@ -56,33 +59,29 @@
 			    
 			    Email:
 				<input type="email" name="email" maxlength="30" required="">
-			   
+			   <div class="checkboxradio">
                 What VectaCorp products are you interested in?<br>
 			    <label for="vProspect"><input type="checkbox" name="product" value="vProspect" id="vProspect">vProspect 2.0</label>
 			    <label for="vConvert"><input type="checkbox" name="product" value="vConvert" id="vConvert">vConvert 2.0</label>
 			    <label for="vRetain"><input type="checkbox" name="product" value="vRetain" id="vRetain">vRetain 1.0</label>
-			    
-			    <br>
-			    What is your current infrastructure?<br>
-			    <legend>Select a Location: </legend>
-					<label for="radio-1">Mac</label>
-					<input type="radio" name="radio-1" id="radio-1">
-					<label for="radio-2">Linux</label>
-					<input type="radio" name="radio-1" id="radio-2">
-					<label for="radio-3">Unix</label>
-					<input type="radio" name="radio-1" id="radio-3">
-					<label for="radio-4">Windows</label>
-					<input type="radio" name="radio-1" id="radio-4">
+				</div>
 				<br>
-				
+				<div class="checkboxradio">
+			    What is your current infrastructure?<br>
+			    <label for="Mac"><input type="radio" name="infrastructure" value="Mac" id="Mac">Mac</label>
+			    <label for="Linux"><input type="radio" name="infrastructure" value="Linux" id="Linux">Linux</label>
+			    <label for="Unix"><input type="radio" name="infrastructure" value="Unix" id="Unix">Unix</label>
+			    <label for="Windows"><input type="radio" name="infrastructure" value="Windows" id="Windows">Windows</label>
+				</div>
+			    <br>
 			    How many employees do you have?
-			    <select name="companysize">
+			    <select id="empId" name="companysize">
                     <option value="1-10">1-10</option>
                     <option value="11-100">11-100</option>
                     <option value="101-1000">101-1000</option>
                     <option value="More than 1000">More than 1000</option>
 		        </select>
-                
+                <br>
 			    How did you hear about us?
 			    <select name="hearaboutus" multiple="" size="5">
                     <option value="Magazine Ad">Magazine Ad</option>
@@ -93,8 +92,8 @@
 		        </select>
                 
 			    Questions or comments for our sales representatives?
-			    <textarea name="questions" size="30" rows="5"></textarea>
-			    <input type="submit" name="submit" value="Submit Now">
+				<textarea name="questions" size="30" rows="5"></textarea>
+				<input type="submit" name="submit" value="Submit Now">
 		    	</fieldset>
 			</form>
 	    </section>
