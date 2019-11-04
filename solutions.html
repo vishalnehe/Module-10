@@ -12,9 +12,7 @@
   	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="js/jquery.goTop.js"></script>
-	<link rel="stylesheet" href="css/jquery.paralaxmenu.css">
-	<script src="js/jquery.paralaxmenu.js"></script>
-
+	<script src="js/jquery.sticky.js"></script>
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -24,23 +22,16 @@
 		$(document).ready(function(){
 			$('#responsive-menu').mobileMenu();
 			$('#go-top').goTop({
-
 			// top offset
 			scrollTop: 100,
-
 			// scroll speed in milliseconds
 			scrollSpeed: 1000,
-
 			// fade in/out speed in milliseconds
 			fadeInSpeed: 1000,
 			fadeOutSpeed: 500
-
 			});
-			$('#sub-brochure').paralaxmenu({
-
-			// the container div id/class where sticky menu is going to be placed
-			container: '#testimonials',
-			});
+			$("#sticker").sticky({ topSpacing: 0 });
+			$("#accordion").accordion();
 		});
 	</script>
 	<style rel="stylesheet">
@@ -57,9 +48,6 @@
 			line-height: 45px;
 			text-align: center;
 			cursor: pointer;
-		}
-		#sub-brochure{
-			position: fixed;
 		}
 	</style>
 </head>
@@ -144,15 +132,19 @@
 		</section>
 		
 		<section id="testimonials" class="five columns">
-				<div id="brochure-menu">
-					<div id="sub-brochure">
+				<div id="sticker">
 						<h4>Quick Nav</h4>
-						<ul>
-							<li><a href="#vprospect">vProspect 2.0</a></li>
-							<li><a href="#vconvert">vConvert 2.0</a></li>
-							<li><a href="#vretain">vRetain 1.0</a></li>
-						</ul>
-					</div>
+						<!-- INSERT ACCORDION HERE -->
+						<div id="accordion">
+							<h3>Solutions</h3>
+							<div>
+								<ul id="nested-list">
+									<li><a href="#vprospect">vProspect 2.0</a></li>
+									<li><a href="#vconvert">vConvert 2.0</a></li>
+									<li><a href="#vretain">vRetain 1.0</a></li>
+								</ul>
+							</div>
+						</div>
 				</div>
 				
 			<!-- INSERT ACCORDION HERE -->
